@@ -4,20 +4,18 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "user")
 public class User {
 
-    @Id @MongoId
+    @Id
     private ObjectId id;
     @Field("name")
     private String name;
     private int age;
     private Address address;
 
-    public User(){
-
+    public User() {
     }
 
     public User(ObjectId id, String name, int age, Address address) {
@@ -51,7 +49,7 @@ public class User {
         this.age = age;
     }
 
-    public br.edu.iftm.tspi.user_api.model.Address getAddress() {
+    public Address getAddress() {
         return address;
     }
 
