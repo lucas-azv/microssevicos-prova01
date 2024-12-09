@@ -1,46 +1,21 @@
 package br.edu.iftm.tspi.product_api.model;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-
-@Document(collection = "product")
-public class Product {
-
-    @Id
-    private ObjectId id;
-
+public class ProductDTO {
     private String product_identifier;
-
-    @Field("nome")
     private String nome;
-
     private String descricao;
-
     private double preco;
+    private String categoria_id;
 
-    @Field("categoria_id")
-    private ObjectId categoria_id;
-
-    public Product() {
+    public ProductDTO() {
     }
 
-    public Product(ObjectId id, String product_identifier, String nome, String descricao, double preco, ObjectId categoria_id) {
-        this.id = id;
+    public ProductDTO(String product_identifier, String nome, String descricao, double preco, String categoria_id) {
         this.product_identifier = product_identifier;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.categoria_id = categoria_id;
-    }
-
-    public ObjectId getId() {
-        return id;
-    }
-
-    public void setId(ObjectId id) {
-        this.id = id;
     }
 
     public String getProductIdentifier() {
@@ -75,11 +50,11 @@ public class Product {
         this.preco = preco;
     }
 
-    public ObjectId getCategoriaId() {
+    public String getCategoriaId() {
         return categoria_id;
     }
 
-    public void setCategoriaId(ObjectId categoria_id) {
+    public void setCategoriaId(String categoria_id) {
         this.categoria_id = categoria_id;
     }
 }
