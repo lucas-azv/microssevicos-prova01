@@ -1,15 +1,14 @@
-package main.java.br.edu.iftm.tspi.shopping_api.model;
+package br.edu.iftm.tspi.shopping_api.model.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import org.bson.types.ObjectId;
-
 import lombok.Data;
+import main.java.br.edu.iftm.tspi.shopping_api.model.Item;
 
 @Data
-public class Shop {
-    private ObjectId id;
+public class ShoppingDTO {
+    private String id;
     private String userIdentifier;
     private LocalDate date;
     private List<Item> items;
