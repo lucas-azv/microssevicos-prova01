@@ -28,6 +28,8 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
     private CategoryService categoryService;
 
 

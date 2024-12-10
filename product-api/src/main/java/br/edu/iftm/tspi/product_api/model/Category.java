@@ -16,7 +16,7 @@ public class Category {
     public Category() {
     }
 
-    public Category(ObjectId id, String nome) { // Corrigido o nome do parâmetro
+    public Category(ObjectId id, String nome) {
         this.id = id;
         this.nome = nome;
     }
